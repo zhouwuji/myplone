@@ -1,0 +1,3 @@
+<div metal:define-macro="my_macro">
+    <p>I can be reused</p>
+</div>
