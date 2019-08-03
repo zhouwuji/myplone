@@ -1,6 +1,6 @@
 from Products.Five.browser import BrowserView
 from operator import itemgetter
-
+from plone import api
 
 class DemoView(BrowserView):
 
@@ -35,3 +35,17 @@ class DemoView(BrowserView):
             )
             results.append(talk)
         return sorted(results, key=itemgetter('title'))
+    
+    def context_info(self):
+        context = self.context
+        title = context.title
+        portal_type = context.portal_type
+        url = context.absolute_url()
+        return u"This is the {0}, '{1}' at {2}".format(portal_type, title, url)
+
+
+class SomeOtherView(BrowserView):
+
+    def __call__(self):
+        training_view = api.content.get_view('training', self.context, self.request)
+        return training_view.context_info()

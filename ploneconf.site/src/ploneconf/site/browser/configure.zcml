@@ -31,5 +31,10 @@
 	  template="templates/macros.pt"
   	  permission="zope2.View"
   	  />
-
+   <browser:page
+      name="some_view"
+      for="*"
+      class=".views.SomeOtherView"
+      permission="zope2.View"
+     />
 </configure>

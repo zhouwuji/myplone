@@ -7,6 +7,9 @@
 <metal:content-core fill-slot="content-core">
 
 <h2 tal:content="python: view.the_title()" />
+<p tal:content="python: view.context_info()">
+    Info on the context
+</p>
 
 <table class="listing">
     <tr>
@@ -25,7 +28,6 @@
         </td>
     </tr>
 </table>
-
 </metal:content-core>
 
 </body>
