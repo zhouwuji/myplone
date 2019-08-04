@@ -47,5 +47,13 @@ class DemoView(BrowserView):
 class SomeOtherView(BrowserView):
 
     def __call__(self):
-        training_view = api.content.get_view('training', self.context, self.request)
+        portal = api.portal.get()
+        some_talk = portal['dexterity-for-the-win']
+        training_view = api.content.get_view('training', some_talk, self.request)
         return training_view.context_info()
+
+
+
+
+class TalkView(BrowserView):
+    """ The default view for talks"""
