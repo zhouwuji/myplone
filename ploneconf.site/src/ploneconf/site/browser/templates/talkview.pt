@@ -4,13 +4,12 @@
     i18n:domain="ploneconf.site">
 <body>
     <metal:content-core fill-slot="content-core">
-        <p>Suitable for <em tal:content="python: ', '.join(context.audience)"></em>
+        <p>Suitable for <em tal:replace="structure view/w/audience/render"></em>
         </p>
 
-        <div tal:condition="python: context.details"
-             tal:content="structure python: context.details.output" />
+        <div tal:content="structure view/w/details/render" />
 
-        <div tal:content="python: context.speaker">
+        <div tal:content="context/speaker">
             User
         </div>
     </metal:content-core>

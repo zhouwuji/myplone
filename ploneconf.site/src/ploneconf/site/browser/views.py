@@ -1,6 +1,7 @@
 from Products.Five.browser import BrowserView
 from operator import itemgetter
 from plone import api
+from plone.dexterity.browser.view import DefaultView
 
 class DemoView(BrowserView):
 
@@ -55,5 +56,5 @@ class SomeOtherView(BrowserView):
 
 
 
-class TalkView(BrowserView):
+class TalkView(DefaultView):
     """ The default view for talks"""
