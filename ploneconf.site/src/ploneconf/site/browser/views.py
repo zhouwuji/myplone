@@ -58,3 +58,25 @@ class SomeOtherView(BrowserView):
 
 class TalkView(DefaultView):
     """ The default view for talks"""
+
+
+
+class TalkListView(BrowserView):
+    """ A list of talks
+    """
+
+    def talks(self):
+        results = []
+        brains = api.content.find(context=self.context, portal_type='talk')
+        for brain in brains:
+            talk = brain.getObject()
+            results.append({
+                'title': brain.Title,
+                'description': brain.Description,
+                'url': brain.getURL(),
+                'audience': ', '.join(talk.audience),
+                'type_of_talk': talk.type_of_talk,
+                'speaker': talk.speaker,
+                'uuid': brain.UID,
+                })
+        return results
