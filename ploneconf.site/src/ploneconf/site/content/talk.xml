@@ -50,5 +50,17 @@
          <required>False</required>
          <title>Speaker Biography</title>
       </field>
+    <field name="room" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <title>room</title>
+      <values>
+        <element>one</element>
+        <element>two</element>
+        <element>three</element>
+        <element></element>
+      </values>
+    </field>
+
    </schema>
 </model>
