@@ -80,3 +80,27 @@ class TalkListView(BrowserView):
                 'uuid': brain.UID,
                 })
         return results
+
+    def get_news(self):
+
+	portal_catalog = api.portal.get_tool('portal_catalog')
+	return portal_catalog(
+	    portal_type='News Item',
+	    review_state='published',
+	    sort_on='effective',
+	)
+
+    def keynotes(self):
+
+	portal_catalog = api.portal.get_tool('portal_catalog')
+	brains = portal_catalog(
+	    portal_type='Talk',
+	    review_state='published')
+	results = []
+	for brain in brains:
+	    # There is no catalog-index for type_of_talk so we must check
+	    # the objects themselves.
+	    talk = brain.getObject()
+	    if talk.type_of_talk == 'Keynote':
+		results.append(talk)
+	return results

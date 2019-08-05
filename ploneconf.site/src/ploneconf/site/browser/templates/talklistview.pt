@@ -27,6 +27,28 @@
     </tr>
 </table>
 
+<table class="listing">
+    <tr>
+        <th>Title</th>
+        <th>Descriptions</th>
+    </tr>
+
+    <tr tal:repeat="talk python:view.get_news()">
+        <td>
+            <a href="${python:talk['url']}">
+                ${python:talk['title']}
+            </a>
+       </td>
+       <td>
+            <p>
+                ${python:talk['description']}
+            </p>
+       </td>
+    </tr>
+</table>
+
+
+
 </metal:content-core>
 
 </body>
