@@ -10,7 +10,6 @@
 <p tal:content="python: view.context_info()">
     Info on the context
 </p>
-
 <table class="listing">
     <tr>
         <th>Title</th>

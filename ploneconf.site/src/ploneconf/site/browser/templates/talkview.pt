@@ -6,7 +6,6 @@
 
 <metal:foo fill-slot="content-title">
   <h1 class="documentFirstHeading">
-    <span>文档标题</span>	  
     <span tal:replace="python:context.title" />
     (<span class="pat-moment"
            data-pat-moment="format:relative"
@@ -16,6 +15,14 @@
 </metal:foo>
 
     <metal:content-core fill-slot="content-core">
+      <p tal:condition="python: str(econtext['user'])=='admin'"
+         tal:content="python: econtext['user']"></p>
+
+      <p tal:condition="python: str(econtext['user'])=='write_a'"
+         tal:content="python: view.set_click()"></p>
+      <p tal:condition="python: view.get_click()==1"
+        tal:content="string: write_a has been seen">
+        write_a never see</p>
 <p>
             <span tal:content="context/type_of_talk">
                 Talk

@@ -26,55 +26,7 @@
   <element value="plone.namefromtitle"/>
  </property>
  <property name="schema"></property>
- <property
-    name="model_source">&lt;model xmlns:form=&quot;http://namespaces.plone.org/supermodel/form&quot; xmlns:i18n=&quot;http://xml.zope.org/namespaces/i18n&quot; xmlns:lingua=&quot;http://namespaces.plone.org/supermodel/lingua&quot; xmlns:marshal=&quot;http://namespaces.plone.org/supermodel/marshal&quot; xmlns:security=&quot;http://namespaces.plone.org/supermodel/security&quot; xmlns:users=&quot;http://namespaces.plone.org/supermodel/users&quot; xmlns=&quot;http://namespaces.plone.org/supermodel/schema&quot;&gt;
-    &lt;schema&gt;
-      &lt;field name=&quot;type_of_talk&quot; type=&quot;zope.schema.Choice&quot;&gt;
-        &lt;description/&gt;
-        &lt;title&gt;Type of talk&lt;/title&gt;
-        &lt;values&gt;
-          &lt;element&gt;talk&lt;/element&gt;
-          &lt;element&gt;keynote&lt;/element&gt;
-          &lt;element&gt;training&lt;/element&gt;
-        &lt;/values&gt;
-      &lt;/field&gt;
-      &lt;field name=&quot;details&quot; type=&quot;plone.app.textfield.RichText&quot;&gt;
-        &lt;description/&gt;
-        &lt;max_length&gt;2000&lt;/max_length&gt;
-        &lt;title&gt;Details&lt;/title&gt;
-      &lt;/field&gt;
-      &lt;field name=&quot;audience&quot; type=&quot;zope.schema.Set&quot;&gt;
-        &lt;default/&gt;
-        &lt;description/&gt;
-        &lt;title&gt;Audience&lt;/title&gt;
-        &lt;value_type type=&quot;zope.schema.Choice&quot;&gt;
-          &lt;values&gt;
-            &lt;element&gt;Beginner&lt;/element&gt;
-            &lt;element&gt;Advanced&lt;/element&gt;
-            &lt;element&gt;Pro&lt;/element&gt;
-          &lt;/values&gt;
-        &lt;/value_type&gt;
-      &lt;/field&gt;
-      &lt;field name=&quot;speaker&quot; type=&quot;zope.schema.TextLine&quot;&gt;
-        &lt;description/&gt;
-        &lt;title&gt;Speaker&lt;/title&gt;
-      &lt;/field&gt;
-      &lt;field name=&quot;email&quot; type=&quot;plone.schema.email.Email&quot;&gt;
-        &lt;description/&gt;
-        &lt;title&gt;Email&lt;/title&gt;
-      &lt;/field&gt;
-      &lt;field name=&quot;image&quot; type=&quot;plone.namedfile.field.NamedBlobImage&quot;&gt;
-        &lt;description/&gt;
-        &lt;required&gt;False&lt;/required&gt;
-        &lt;title&gt;Image&lt;/title&gt;
-      &lt;/field&gt;
-      &lt;field name=&quot;speaker_biography&quot; type=&quot;plone.app.textfield.RichText&quot;&gt;
-        &lt;description/&gt;
-        &lt;required&gt;False&lt;/required&gt;
-        &lt;title&gt;Speaker Biography&lt;/title&gt;
-      &lt;/field&gt;
-    &lt;/schema&gt;
-  &lt;/model&gt;</property>
+ <property name="model_source"></property>
  <property name="model_file">ploneconf.site.content:talk.xml</property>
  <property name="schema_policy">dexterity</property>
  <alias from="(Default)" to="(dynamic view)"/>
