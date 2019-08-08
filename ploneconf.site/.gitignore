@@ -38,3 +38,5 @@ reports/
 !.gitkeep
 !.travis.yml
 !src/ploneconf
+*.swn
+*.swo
