@@ -13,45 +13,44 @@
 
   <!-- Publish static files -->
   <plone:static
-      name="ploneconf.site"
-      type="plone"
-      directory="static"
-      />
-
-   <browser:page
-     name="training"
-     for="*"
-     template="templates/training.pt"
-     permission="zope2.View"
-     class=".views.DemoView"
-     />
-   <browser:page
-     for="*"
-     name="abunchofmacros"
-	  template="templates/macros.pt"
-  	  permission="zope2.View"
-  	  />
-   <browser:page
-      name="some_view"
-      for="*"
-      class=".views.SomeOtherView"
-      permission="zope2.View"
-     />
-   <browser:page
-      name="talkview"
-      for="*"
-      layer="zope.interface.Interface"
-      class=".views.TalkView"
-      template="templates/talkview.pt"
-      permission="zope2.View"
-     />
-
-<browser:page
-   name="talklistview"
+    name="ploneconf.site"
+    type="plone"
+    directory="static"
+  />
+  <browser:page
+   name="training"
    for="*"
-   layer="zope.interface.Interface"
-   class=".views.TalkListView"
-   template="templates/talklistview.pt"
+   template="templates/training.pt"
    permission="zope2.View"
+   class=".views.DemoView"
    />
+  <browser:page
+   for="*"
+   name="abunchofmacros"
+  template="templates/macros.pt"
+    permission="zope2.View"
+    />
+  <browser:page
+    name="some_view"
+    for="*"
+    class=".views.SomeOtherView"
+    permission="zope2.View"
+   />
+  <browser:page
+    name="talkview"
+    for="*"
+    layer="zope.interface.Interface"
+    class=".views.TalkView"
+    template="templates/talkview.pt"
+    permission="zope2.View"
+   />
+
+  <browser:page
+     name="talklistview"
+     for="*"
+     layer="zope.interface.Interface"
+     class=".views.TalkListView"
+     template="templates/talklistview.pt"
+     permission="zope2.View"
+     />
 </configure>
