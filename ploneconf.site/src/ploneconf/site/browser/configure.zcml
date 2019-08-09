@@ -18,16 +18,16 @@
     directory="static"
   />
   <browser:page
-   name="training"
-   for="*"
-   template="templates/training.pt"
-   permission="zope2.View"
-   class=".views.DemoView"
+     name="training"
+     for="*"
+     template="templates/training.pt"
+     permission="zope2.View"
+     class=".views.DemoView"
    />
   <browser:page
-   for="*"
-   name="abunchofmacros"
-  template="templates/macros.pt"
+    for="*"
+    name="abunchofmacros"
+    template="templates/macros.pt"
     permission="zope2.View"
     />
   <browser:page
@@ -53,4 +53,13 @@
      template="templates/talklistview.pt"
      permission="zope2.View"
      />
+  <browser:viewlet
+    name="social"
+    for="ploneconf.site.behaviors.social.ISocial"
+    manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+    class=".viewlets.SocialViewlet"
+    layer="zope.interface.Interface"
+    template="templates/social_viewlet.pt"
+    permission="zope2.View"
+  />
 </configure>
