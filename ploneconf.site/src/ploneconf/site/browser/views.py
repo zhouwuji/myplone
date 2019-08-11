@@ -9,13 +9,13 @@ class DemoView(BrowserView):
 
     def the_title(self):
         s = 'hello'
-        import pdb;pdb.set_trace()
+        # import pdb;pdb.set_trace()
         # s = u'A list of great trainings:'
         # s = self.econtext.user
         brains = api.content.find(context=self.context)
         brain = brains[0]
         obj = brain.getObject()
-        obj.click
+        # obj.click
         transaction.commit()
         return s
 
