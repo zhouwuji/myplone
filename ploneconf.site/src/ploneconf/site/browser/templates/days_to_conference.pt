@@ -1,0 +1,5 @@
+
+<div class="days_to_conference"
+  tal:content="view/human">
+    None
+</div>

@@ -70,4 +70,13 @@
     template="templates/number_of_talks.pt"
     permission="cmf.ManagePortal"
   />
+  <browser:viewlet
+    name="days_to_conference"
+    for="*"
+    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+    class=".viewlets.DaysToConferenceViewlet"
+    layer="zope.interface.Interface"
+    template="templates/days_to_conference.pt"
+    permission="cmf.ManagePortal"
+  />
 </configure>
