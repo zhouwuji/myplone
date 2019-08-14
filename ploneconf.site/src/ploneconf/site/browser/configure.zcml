@@ -53,6 +53,12 @@
     template="templates/talklistview.pt"
     permission="zope2.View"
   />
+  <browser:page
+    name="demo_content"
+    for="*"
+    class="ploneconf.site.browser.demo.DemoContent"
+    permission="cmf.ManagePortal"
+  />
   <browser:viewlet
     name="social"
     for="ploneconf.site.behaviors.social.ISocial"

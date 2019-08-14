@@ -4,7 +4,6 @@ from plone import api
 from plone.dexterity.browser.view import DefaultView
 import transaction
 
-
 class DemoView(BrowserView):
 
     def the_title(self):
@@ -103,7 +102,7 @@ class TalkListView(BrowserView):
                 'title': brain.Title,
                 'description': brain.Description,
                 'url': brain.getURL(),
-                'audience': ', '.join(talk.audience),
+                'audience': ', '.join(talk.audience if talk.audience else ''),
                 'type_of_talk': talk.type_of_talk,
                 'speaker': talk.speaker,
                 'uuid': brain.UID,
