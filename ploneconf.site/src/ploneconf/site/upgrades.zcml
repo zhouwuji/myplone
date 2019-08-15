@@ -1,16 +1,35 @@
+<!--<configure-->
+<!--  xmlns="http://namespaces.zope.org/zope"-->
+<!--  xmlns:genericsetup="http://namespaces.zope.org/genericsetup">-->
+
+<!--  &lt;!&ndash; -*- extra stuff goes here -*- &ndash;&gt;-->
+<!--  &lt;!&ndash;<genericsetup:upgradeStep-->
+<!--    source="*"-->
+<!--    destination="1001"-->
+<!--    title="Reload GS profiles"-->
+<!--    description=""-->
+<!--    profile="ploneconf.site:default"-->
+<!--    handler=".upgrades.reload_gs_profile"-->
+<!--    />&ndash;&gt;-->
+
+
+<!--</configure>-->
+
+
 <configure
   xmlns="http://namespaces.zope.org/zope"
-  xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+  xmlns:i18n="http://namespaces.zope.org/i18n"
+  xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+  i18n_domain="ploneconf.site">
 
-  <!-- -*- extra stuff goes here -*- -->
-  <!--<genericsetup:upgradeStep
-    source="*"
-    destination="1001"
-    title="Reload GS profiles"
-    description=""
-    profile="ploneconf.site:default"
-    handler=".upgrades.reload_gs_profile"
-    />-->
-
+  <genericsetup:upgradeStep
+      title="Update and cleanup talks"
+      description="Update typeinfo and move talks to a folder 'talks'"
+      source="1000"
+      destination="1001"
+      handler="ploneconf.site.upgrades.upgrade_site"
+      sortkey="1"
+      profile="ploneconf.site:default"
+      />
 
 </configure>

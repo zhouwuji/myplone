@@ -4,6 +4,7 @@ from plone import api
 from plone.dexterity.browser.view import DefaultView
 import transaction
 
+
 class DemoView(BrowserView):
 
     def the_title(self):
@@ -58,8 +59,6 @@ class DemoView(BrowserView):
         return u"This is the {0}, '{1}' at {2}".format(portal_type, title, url)
 
 
-
-
 class SomeOtherView(BrowserView):
 
     def __call__(self):
@@ -71,15 +70,17 @@ class SomeOtherView(BrowserView):
 
 class TalkView(DefaultView):
     """ The default view for talks"""
+
     def set_click(self):
         brains = api.content.find(context=self.context)
         brain = brains[0]
         obj = brain.getObject()
-        if hasattr(obj, 'click') and (obj.click==1):
+        if hasattr(obj, 'click') and (obj.click == 1):
             return
         else:
             obj.click = 1
             transaction.commit()
+
     def get_click(self):
         brains = api.content.find(context=self.context)
         brain = brains[0]
@@ -89,25 +90,13 @@ class TalkView(DefaultView):
         else:
             return None
 
+
 class TalkListView(BrowserView):
     """ A list of talks
     """
 
     def talks(self):
-        results = []
-        brains = api.content.find(context=self.context, portal_type='talk')
-        for brain in brains:
-            talk = brain.getObject()
-            results.append({
-                'title': brain.Title,
-                'description': brain.Description,
-                'url': brain.getURL(),
-                'audience': ', '.join(talk.audience if talk.audience else ''),
-                'type_of_talk': talk.type_of_talk,
-                'speaker': talk.speaker,
-                'uuid': brain.UID,
-            })
-        return results
+        return api.content.find(context=self.context, portal_type='talk')
 
     def get_news(self):
 

@@ -5,7 +5,7 @@
   <metal:content-core fill-slot="content-core">
   <table class="listing"
          id="talks"
-         tal:define="talks view/talks">
+         tal:define="brains view/talks">
     <thead>
       <tr>
         <th>Title</th>
@@ -14,23 +14,23 @@
       </tr>
     </thead>
     <tbody>
-      <tr tal:repeat="talk talks">
+      <tr tal:repeat="brain brains">
         <td>
           <a href=""
-             tal:attributes="href talk/url;
-                             title python:talk['description']"
-             tal:content="talk/title">
+             tal:attributes="href python:brain.getURL();
+                             title python:brain.Description"
+             tal:content="python:brain.Title">
              The 7 sins of plone-development
           </a>
         </td>
-        <td tal:content="talk/speaker">
+        <td tal:content="python:brain.speaker">
             Philip Bauer
         </td>
-        <td tal:content="talk/audience">
+        <td tal:content="python:', '.join(brain.audience or [])">
             Advanced
         </td>
       </tr>
-      <tr tal:condition="not:talks">
+      <tr tal:condition="not:brains">
         <td colspan=3>
             No talks so far :-(
         </td>

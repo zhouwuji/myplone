@@ -9,5 +9,10 @@
     description="Adds a link to lanyrd"
     provides=".social.ISocial"
   />
-
+  <plone:behavior
+    title="Talk"
+    name="ploneconf.talk"
+    description="Marker interface for talks to be able to bind views to."
+    provides="..interfaces.ITalk"
+  />
 </configure>
