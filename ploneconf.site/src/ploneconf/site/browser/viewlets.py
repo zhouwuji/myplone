@@ -1,6 +1,13 @@
 from plone.app.layout.viewlets import ViewletBase
 from datetime import datetime
-import arrow
+try:
+    import arrow
+except:
+    import os
+    if os.system('pip install arrow')==0:
+        import arrow
+    else:
+        assert 0, "Fail to install arrow"
 
 CONFERENCE_START_DATE = datetime(2015, 10, 12)
 

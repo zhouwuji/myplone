@@ -38,7 +38,7 @@
   />
   <browser:page
     name="talkview"
-    for="ploneconf.site.interfaces.ITalk"
+    for="*"
     layer="zope.interface.Interface"
     class=".views.TalkView"
     template="templates/talkview.pt"
@@ -48,7 +48,7 @@
   <browser:page
     name="talklistview"
     for="*"
-    layer="..interfaces.IPloneconfSiteLayer"
+    layer="zope.interface.Interface"
     class=".views.TalkListView"
     template="templates/talklistview.pt"
     permission="zope2.View"
