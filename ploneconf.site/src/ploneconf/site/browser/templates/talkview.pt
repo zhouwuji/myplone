@@ -15,6 +15,7 @@
 </metal:foo>
 
     <metal:content-core fill-slot="content-core">
+      <tal:eventsummary replace="structure context/@@event_summary"/>
       <p tal:condition="python: str(econtext['user'])=='admin'"
          tal:content="python: econtext['user']"></p>
 

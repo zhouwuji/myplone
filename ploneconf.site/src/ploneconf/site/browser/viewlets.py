@@ -19,11 +19,12 @@ class DaysToConferenceViewlet(ViewletBase):
 
     def human(self):
         return arrow.get(CONFERENCE_START_DATE).humanize()
-# from ploneconf.site.behaviors.social import ISocial
+
+from ploneconf.site.behaviors.social import ISocial
 #
 class SocialViewlet(ViewletBase):
     pass
 
-#     def lanyrd_link(self):
-#         adapted = ISocial(self.context)
-#         return adapted.lanyrd
+    def lanyrd_link(self):
+        adapted = ISocial(self.context)
+        return adapted.lanyrd

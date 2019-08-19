@@ -27,6 +27,7 @@
     <element value="ploneconf.social"/>
     <element value="ploneconf.talk"/>
     <element value="plone.versioning"/>
+    <element value="plone.eventbasic"/>
   </property>
   <property name="schema"></property>
   <property name="model_source"></property>

@@ -29,6 +29,11 @@
         <td tal:content="python:', '.join(brain.audience or [])">
             Advanced
         </td>
+        <td class="pat-moment"
+            data-pat-moment="format:calendar"
+           tal:content="python:brain.start">
+          Timelanyrd_link
+        </td>
       </tr>
       <tr tal:condition="not:brains">
         <td colspan=3>
